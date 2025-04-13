@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CoinToss2</string>
+    <string name="heads_0">Heads : 0</string>
+    <string name="tails_0">Tails: 0</string>
+    <string name="coin">Coin</string>
+    <string name="toss_coin">Toss Coin</string>
+    <string name="login">Login</string>
+    <string name="sign_up" />
+</resources>
