@@ -1,30 +1,27 @@
 package com.louiserennick.cointoss2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     private var heads = 0
     private var tails = 0
 
-    private lateinit var  coinImage : ImageView
-    private lateinit var  headsCount: TextView
-    private lateinit var  tailsCount: TextView
-    private lateinit var  tossButton: Button
+    private lateinit var coinImage: ImageView
+    private lateinit var headsCount: TextView
+    private lateinit var tailsCount: TextView
+    private lateinit var tossButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // connect UI components
+        // Connect UI components
         coinImage = findViewById(R.id.coinImage)
         headsCount = findViewById(R.id.headsCount)
         tailsCount = findViewById(R.id.tailsCount)
@@ -34,25 +31,28 @@ class MainActivity : AppCompatActivity() {
         tossButton.setOnClickListener {
             tossCoin()
         }
-        // sign up btn logic
-        // add code fun here make the button work
 
-
-
+        // Sign Up button logic
+        val signUpButton = findViewById<Button>(R.id.sign_up)
+        signUpButton.setOnClickListener {
+            val intent = Intent(this, SignIn::class.java)
+            startActivity(intent)
+        }
     }
+
     private fun tossCoin() {
         val result = Random.nextBoolean() // true = heads and false = tails
 
-        if(result) {
+        if (result) {
             heads++
-            coinImage.setImageResource(R.drawable.coin_heads)
-        }else{
+            coinImage.setImageResource(R.drawable.jules_heads)
+        } else {
             tails++
-            coinImage.setImageResource(R.drawable.coin_tails)
+            coinImage.setImageResource(R.drawable.jules_tails)
         }
 
-        // update the counters
-        headsCount.text = "Heads: $heads"
-        tailsCount.text = "Tails: $tails"
+        // Update the counters using getString + placeholders
+        headsCount.text = getString(R.string.heads_count, heads)
+        tailsCount.text = getString(R.string.tails_count, tails)
     }
 }

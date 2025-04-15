@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">CoinToss2</string>
-    <string name="heads_0">Heads : 0</string>
-    <string name="tails_0">Tails: 0</string>
-    <string name="coin">Coin</string>
-    <string name="toss_coin">Toss Coin</string>
+    <string name="app_name">Coin Flip Challenge</string>
+    <string name="heads_0">Heads flipped: 0</string>
+    <string name="tails_0">Tails flipped: 0</string>
+    <string name="coin">Coin Image</string>
+    <string name="toss_coin">Flip the Coin</string>
+    <string name="sign_up">Go to Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="sign_up" />
+    <string name="heads_count">Heads: %1$d</string>
+    <string name="tails_count">Tails: %1$d</string>
+
 </resources>
